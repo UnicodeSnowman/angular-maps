@@ -1,0 +1,71 @@
+
+/* LESS MIX-INS & VARS */
+/* =================== */
+
+@table_border_width: 1px;
+
+.align_right {
+	float:right;
+    h3 {
+        margin-top: 0px;
+    }
+}
+
+.table-padding (@top-margin: 10px, @top-padding: 5px) {
+   margin-top: @top-margin;
+   padding-top: @top-padding;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* =================== */
+
+#map_canvas {
+    img {
+        max-width: none;
+    }
+}
+
+#pageSize {
+    width: 20px;
+}
+
+#searchTerm {
+    width: 45%;
+}
+
+.DomainMapJsonData {
+	display: none;
+}
+
+#device_info {
+	padding: 0px 15px 0px 15px
+}
+
+#DeviceDataTable {
+	width: 100%;
+}
+
+#devices {
+    #DeviceDataTable {
+        th {
+            text-align: left;
+        }
+    }
+
+    #table_header {
+       .table-padding;
+    }
+
+    #table_footer {
+       .table-padding;
+       border-top-color: black;
+       border-style: solid;
+       border-width: @table_border_width;
+       border-bottom: none;
+       border-left: none;
+       border-right: none;
+    }
+}

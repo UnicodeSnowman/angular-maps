@@ -1,0 +1,41 @@
+<div id="device_table" style="width:900px">
+  <div id="table_header">
+    <span class="align_right">
+        <h3>Located Devices: {{ filtered_markers.length }}</h3>
+    </span>
+    <span>
+      <input type="text" id="searchTerm" x-ng-model="searchTerm" placeholder="Enter a user's email address to locate a Device..."/>
+      <button x-ng-click="search()">search</button>
+    </span>
+  </div>
+
+  <div id="devices" x-ng-show="has_devices">
+    <span id="user_data">
+      <table id="DeviceDataTable">
+        <tr>
+          <th></th>
+          <th>User</th>
+          <th>Date</th>
+          <th>Location</th>
+        </tr>
+
+        <tr x-ng-repeat="marker in filtered_markers | StartFrom : current_page * page_size | limitTo : page_size"> 
+          <td><img x-ng-src="{{ marker.deviceplatformurl }}" height="25" width="25" /></td>
+          <td><span class="userid">{{ marker.email }}</span></td>
+          <td><span class="date">{{ marker.date }}</span></td>
+          <td><a href="#" class="DeviceLocationLink" x-ng-click="locateMarker(this)">{{ marker.location }}</a></td>
+        </tr>
+      </table>
+    <span>
+
+    <button x-ng-disabled="current_page == 0" x-ng-click="previousPage()">Previous</button>
+    <button x-ng-disabled="current_page >= (page_count - 1)" x-ng-click="nextPage()" class="align_right">Next</button>
+    <br />
+    <div id="table_footer">
+      Current Page: {{ current_page + 1 }}
+      <span class="align_right">
+          Results per Page: {{ page_size }} <!-- <input type="text" id="page_size" x-ng-model="page_size" /> --> <br />
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+﻿
+.DomainMapJsonData {
+	display: none;
+}
+
+#device_info {
+	/*border-style:ridge; 
+	border-width:thin; */
+	padding:0px 15px 0px 15px
+}
+
+#device_info #devices {
+	width: 65%;
+}
+
+#device_info #devices .infoVisible {
+	visibility: visible;
+}
+
+#DeviceDataTable {
+	width: 100%;
+}
+
+.num_devices {
+	float:right;
+}
+	
+#map img {
+	max-width: none;
+}
